@@ -12,35 +12,35 @@ function Footer() {
                 <ul>
                     <h4>Other link</h4>
                     <li>
-                        <a href="#"> Events</a>
+                        <a href="/events"> Events</a>
                     </li>
                     <li>
-                        <a href="#"> Shop</a>
+                        <a href="/shop"> Shop</a>
                     </li>
                     <li>
-                        <a href="#"> About us</a>
+                        <a href="/about"> About us</a>
                     </li>
                     <li>
-                        <a href="#"> Contact</a>
+                        <a href="/contact"> Contact</a>
                     </li>
                 </ul>
                 <ul>
                     <h4>Policies</h4>
                     <li>
-                        <a href="#">Customers</a>
+                        <a href="/">Customers</a>
                     </li>
                     <li>
-                        <a href="#">Exchange & Refund</a>
+                        <a href="/">Exchange & Refund</a>
                     </li>
                     <li>
-                        <a href="#">Payments</a>
+                        <a href="/">Payments</a>
                     </li>
                 </ul>
                 <ul className={cx('social')}>
                     <h4>Social Media</h4>
-                    <li><a href='#'><BsFacebook/> <span>Facebook</span></a></li>
-                    <li><a href='#'><BsInstagram/> <span>Instagram</span></a></li>
-                    <li><a href='#'><BsPinterest/> <span>Pinterest</span></a></li>
+                    <li><a href='/'><BsFacebook/> <span>Facebook</span></a></li>
+                    <li><a href='/'><BsInstagram/> <span>Instagram</span></a></li>
+                    <li><a href='/'><BsPinterest/> <span>Pinterest</span></a></li>
                 </ul>
             </div>
             <p className={cx('rights')}>

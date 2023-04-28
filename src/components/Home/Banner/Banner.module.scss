@@ -16,6 +16,16 @@
     height: calc(100vh - 70px);
     flex-direction: column;
     justify-content: center;
+    animation: move-left-to-right 1s ease-out forwards;
+
+    @keyframes move-left-to-right {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(0%);
+        }
+      }
 
     // MOBILE
     @media (max-width: 768px) {
@@ -24,6 +34,8 @@
         align-items: center;
         margin-top: -60px;
     }
+
+
 }
 
 .title-banner {
@@ -69,6 +81,16 @@
     height: calc(100vh - 70px);
     align-items: center;
     justify-content: center;
+    animation: move-right-to-left 1s ease-out forwards;
+    
+    @keyframes move-right-to-left {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(0%);
+        }
+      }
 
     @media (max-width: 768px) {
         margin-top: -80px;
