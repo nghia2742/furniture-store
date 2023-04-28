@@ -1,0 +1,63 @@
+.wrapper {
+    height: var(--nav-height);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+    font-weight: 500;
+    
+    li {
+        cursor: pointer;
+    }
+
+    $phone: 767px;
+    @media (max-width: $phone) { 
+        display: none;
+    }
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 25px;
+    color: transparent;
+    -webkit-text-stroke: 1px black;
+    cursor: pointer;
+}
+
+.btn-hamburger {
+    display: none;
+
+    $phone: 767px;
+    @media (max-width: $phone) { 
+        display: block;
+    }
+}
+
+.interact {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    $phone: 767px;
+    @media (max-width: $phone) { 
+        display: none;
+    }
+}
+
+.favorite {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.cart {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.login {
+    font-size: 13px;
+}

@@ -1,0 +1,36 @@
+.personCard {
+    margin-top: 50px;
+    height: 300px;
+    width: 250px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transition: transform 0.2s linear;
+    
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.img {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.name {
+    text-transform: uppercase;
+    padding-top: 10px;
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+.major {
+    padding-top: 10px;
+    padding-left: 20px;
+    font-style: italic;
+    color: darkgray;
+    font-size: 13px;
+}

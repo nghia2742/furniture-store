@@ -1,0 +1,28 @@
+.wrapper {
+    margin-top: 200px;
+    display: flex;
+    height: max(fit-content, 100vh);
+    padding: 0 50px;
+    flex-direction: column;
+    align-items: center;
+    
+
+    // MOBILE
+    @media (max-width: 768px) {
+        padding: 0 10px;
+        display: block;
+    }
+}
+
+.titleSection {
+    font-size: 40px;
+    color: navy;
+    text-align: center;
+}
+
+.wrapPeopleCard {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
