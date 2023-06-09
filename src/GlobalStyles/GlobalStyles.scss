@@ -17,7 +17,9 @@ body {
     max-width: 1280px;
     margin: 0 auto;
     height: fit-content;
-    background: radial-gradient(circle at center, #fbf3e9 , #ffffff);
+    background-color: #ffffff;
+opacity: 1;
+background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #ffffff 40px ), repeating-linear-gradient( #d5f7ff55, #d5f7ff );
     scroll-behavior: smooth;
 }
 

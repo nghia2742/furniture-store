@@ -10,7 +10,7 @@ function Footer() {
             <div className={cx('content')}>
                 <div className={cx('logo')}>Furniture.</div>
                 <ul>
-                    <h4>Other link</h4>
+                    <h4>Navigation</h4>
                     <li>
                         <a href="/events"> Events</a>
                     </li>
