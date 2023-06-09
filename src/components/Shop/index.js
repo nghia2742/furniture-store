@@ -6,7 +6,7 @@ function Shop() {
     return (
         <GlobalStyles>
             <Nav />
-            
+            TEST
             <Footer />
         </GlobalStyles>
     );
