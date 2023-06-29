@@ -2,6 +2,7 @@
 
 :root {
     --white: #fff;
+    --navy: #1a2980;
     --nav-height: 70px;
     --m-wrapper-top: 70px;
 }
@@ -17,9 +18,11 @@ body {
     max-width: 1280px;
     margin: 0 auto;
     height: fit-content;
-    background-color: #ffffff;
-opacity: 1;
-background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #ffffff 40px ), repeating-linear-gradient( #d5f7ff55, #d5f7ff );
+    background-color: #fafafa;
+    background-image: radial-gradient(#c0c0c0 0.5px, transparent 0.5px),
+        radial-gradient(#c0c0c0 0.5px, #fafafa 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
     scroll-behavior: smooth;
 }
 
@@ -44,7 +47,12 @@ a {
     color: #fff;
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
-    background-image: linear-gradient(to right, #1a2980 0%, #26d0ce 51%, #1a2980 100%);
+    background-image: linear-gradient(
+        to right,
+        #1a2980 0%,
+        #26d0ce 51%,
+        #1a2980 100%
+    );
     cursor: pointer;
 
     &:hover {

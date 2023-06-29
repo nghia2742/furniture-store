@@ -1,0 +1,70 @@
+.wrapper {
+    display: flex;
+    height: fit-content;
+    min-height: 90vh;
+}
+
+.leftContent {
+    position: sticky;
+    top: 70px;
+    width: 20%;
+    background-color: white;
+}
+
+.labelCategories {
+    min-height: 70px;
+    padding: 15px 50px;
+    border-bottom: 1px dashed gray;
+}
+
+.rangePrice, .categories {
+    font-size: 14px;
+
+    li {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.rightContent {
+    width: 80%;
+    min-height: 90vh;
+}
+
+.rightContent_header {
+    display: flex;
+    min-height: 70px;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    padding: 10px 30px;
+    flex-direction: row-reverse;
+}
+
+.search {
+    display: flex;
+    border-radius: 10px;
+}
+
+.products {
+    height: fit-content;
+    min-height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.wrapProduct {
+    min-width: 33%;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    display: flex;
+    gap: 20px;
+}
+

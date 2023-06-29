@@ -4,6 +4,8 @@
     justify-content: space-around;
     align-items: center;
     background-color: var(--white);
+    background-size: 4px 4px;
+    background-image: repeating-linear-gradient(45deg, rgba(233, 178, 122, 0.8) 0, rgba(233, 178, 122, 0.8) 0.4px, #ffffff 0, #ffffff 50%);
     position: sticky;
     top: 0;
     left: 0;
@@ -14,10 +16,19 @@
     display: flex;
     gap: 20px;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 400;
     
     li {
+        padding: 5px;
+        border-radius: 8px;
         cursor: pointer;
+    }
+
+    li:hover {
+        background-color: var(--navy);
+        a {
+            color: var(--white);
+        }
     }
 
     $phone: 767px;
