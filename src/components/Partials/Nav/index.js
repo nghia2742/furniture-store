@@ -40,6 +40,7 @@ function Nav({ reloadSidebar, onRemoveFav, onReloadCartSidebar }) {
         onRemoveFav(id);
     };
 
+    // Hide/Show MenuSidebar
     const [menu, setMenu] = useState(false);
     const handleMenu = () => {
         setMenu(!menu)
