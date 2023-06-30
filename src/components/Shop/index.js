@@ -57,6 +57,7 @@ function Shop() {
         pages.push(i);
     }
 
+    // HANDLE FAVORITE
     const [favoriteList, setFavoriteList] = useState(() => {
         const storedData = localStorage.getItem('favoriteList');
         if (storedData) {
@@ -86,13 +87,39 @@ function Shop() {
         setReloadSidebar(favoriteList.length + 1);
     };
 
+    const handleReloadCartSidebar = () => {
+        setReloadSidebar(cartList.length + 1);
+    };
+
     const handleRemoveFav = (id) => {
         handleFavoriteList(id);
     };
 
+    // HANDLE CART
+    const [cartList, setCartList] = useState(() => {
+        const storedData = localStorage.getItem('cartList');
+        if (storedData) {
+            return JSON.parse(storedData);
+        }
+        return [];
+    });
+    const handleCartList = (productId) => {
+        handleReloadCartSidebar();
+        if (cartList.length < 2 && cartList.includes(productId)) {
+            return setCartList([]);
+        } else if (cartList.includes(productId)) {
+            let index = cartList.indexOf(productId);
+            cartList.splice(index, 1);
+            return setCartList([...cartList]);
+        }
+        return setCartList([...cartList, productId]);
+    };
+
+    localStorage.setItem('cartList', JSON.stringify(cartList));
+
     return (
         <GlobalStyles>
-            <Nav reloadSidebar={reloadSidebar} onRemoveFav={handleRemoveFav} />
+            <Nav reloadSidebar={reloadSidebar} onReloadCartSidebar={handleReloadCartSidebar} onRemoveFav={handleRemoveFav} />
             <div className={cx('wrapper')}>
                 <div className={cx('leftContent')}>
                     <h2 className={cx('labelCategories')}>Categories</h2>
@@ -182,6 +209,9 @@ function Shop() {
                                     product={product}
                                     handleFavoriteClick={handleFavoriteList}
                                     onReloadSidebar={handleReloadSidebar}
+                                    onReloadCartSidebar={handleReloadCartSidebar}
+                                    handleCartClick={handleCartList}
+
                                 />
                             </div>
                         ))}

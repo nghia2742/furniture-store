@@ -5,7 +5,7 @@ import styles from './ProductCard.module.scss';
 
 const cx = classNames.bind(styles);
 
-function ProductCard({ product, handleFavoriteClick}) {
+function ProductCard({ product, handleFavoriteClick, handleCartClick}) {
     const favoriteList = JSON.parse(localStorage.getItem('favoriteList')) || [];
     let isFavorite = favoriteList.find((id) => product.id === id);
     
@@ -35,6 +35,7 @@ function ProductCard({ product, handleFavoriteClick}) {
                         <span
                             className={cx('iconShopping')}
                             title="Add to cart"
+                            onClick={() => handleCartClick(product.id)}
                         >
                             <AiOutlineShoppingCart />
                         </span>

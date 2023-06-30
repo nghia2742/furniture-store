@@ -5,10 +5,14 @@
 }
 
 .leftContent {
-    position: sticky;
     top: 70px;
     width: 20%;
     background-color: white;
+
+    $phone: 767px;
+    @media (max-width: $phone) {
+        display: none;
+    }
 }
 
 .labelCategories {
@@ -29,6 +33,7 @@
 .rightContent {
     width: 80%;
     min-height: 90vh;
+
 }
 
 .rightContent_header {
@@ -38,6 +43,11 @@
     align-items: center;
     padding: 10px 30px;
     flex-direction: row-reverse;
+
+    $phone: 767px;
+    @media (max-width: $phone) {
+        width: 100vw;
+    }
 }
 
 .search {
@@ -57,6 +67,11 @@
     min-width: 33%;
     display: flex;
     justify-content: center;
+
+    $phone: 767px;
+    @media (max-width: $phone) {
+        min-width: 100vw;
+    }
 }
 
 .pagination {
@@ -66,5 +81,10 @@
     height: 20vh;
     display: flex;
     gap: 20px;
+
+    $phone: 767px;
+    @media (max-width: $phone) {
+        min-width: 100vw;
+    }
 }
 

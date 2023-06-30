@@ -1,4 +1,3 @@
-// import * as React from 'react';
 import Badge from '@mui/material/Badge';
 import classNames from 'classnames/bind';
 import { AiOutlineHeart, AiOutlineShoppingCart } from 'react-icons/ai';
@@ -11,10 +10,11 @@ import SidebarCart from '../SidebarCart';
 
 const cx = classNames.bind(styles);
 
-function Nav({ reloadSidebar, onRemoveFav }) {
+function Nav({ reloadSidebar, onRemoveFav, onReloadCartSidebar }) {
     let favoriteNumber = JSON.parse(
         localStorage.getItem('favoriteList')
     ).length;
+    let cartNumber = JSON.parse(localStorage.getItem('cartList')).length;
     const [favoriteSidebar, setFavoriteSidebar] = useState(false);
     const handleFavoriteSidebar = () => {
         setFavoriteSidebar(!favoriteSidebar);
@@ -22,43 +22,53 @@ function Nav({ reloadSidebar, onRemoveFav }) {
 
     const [cartSidebar, setCartSidebar] = useState(false);
     const handleCartSidebar = () => {
-        console.log(cartSidebar);
         setCartSidebar(!cartSidebar);
     };
 
     const [badgeFavorite, setBadgeFavorite] = useState(favoriteNumber);
+    const [badgeCart, setBadgeCart] = useState(cartNumber);
 
     useEffect(() => {
         setBadgeFavorite(favoriteNumber);
     }, [favoriteNumber]);
 
+    useEffect(() => {
+        setBadgeCart(cartNumber);
+    }, [cartNumber]);
+
     const handleRemoveFav = (id) => {
         onRemoveFav(id);
     };
+
+    const [menu, setMenu] = useState(false);
+    const handleMenu = () => {
+        setMenu(!menu)
+    }
 
     return (
         <nav className={cx('wrapper')}>
             <div className={cx('logo')}>Furniture.</div>
 
-            <div className={cx('btn-hamburger')}>
-                <RxHamburgerMenu />
+            <div className={cx('btn-hamburger')} >
+                <RxHamburgerMenu onClick={handleMenu} />
             </div>
-            <ul className={cx('navbar')}>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/shop">Shop</a>
-                </li>
-                <li>
-                    <a href="/location">Location</a>
-                </li>
-                <li>
-                    <a href="/about">About</a>
-                </li>
-                <li>
-                    <a href="/contact">Contact</a>
-                </li>
+            <ul className={cx('navbar', menu?'menu':'')}>
+                {menu?<span className={cx('closeMenu')} onClick={handleMenu}>&times;</span>:''}
+                <a href="/">
+                    <li>Home</li>
+                </a>
+                <a href="/shop">
+                    <li>Shop</li>
+                </a>
+                <a href="/location">
+                    <li>Location</li>
+                </a>
+                <a href="/services">
+                    <li>Services</li>
+                </a>
+                <a href="/about">
+                    <li>About</li>
+                </a>
             </ul>
             <div className={cx('interact')}>
                 <div
@@ -69,10 +79,8 @@ function Nav({ reloadSidebar, onRemoveFav }) {
                         <AiOutlineHeart />
                     </Badge>
                 </div>
-                <div className={cx('cart')}
-                    onClick={() => handleCartSidebar()}
-                >
-                    <Badge badgeContent={0} color="error">
+                <div className={cx('cart')} onClick={() => handleCartSidebar()}>
+                    <Badge badgeContent={badgeCart} color="error">
                         <AiOutlineShoppingCart />
                     </Badge>
                 </div>
@@ -86,7 +94,10 @@ function Nav({ reloadSidebar, onRemoveFav }) {
                 />
             ) : null}
             {cartSidebar ? (
-                <SidebarCart onSidebar={handleCartSidebar} />
+                <SidebarCart
+                    onSidebar={handleCartSidebar}
+                    onReloadCartSidebar={onReloadCartSidebar}
+                />
             ) : null}
         </nav>
     );

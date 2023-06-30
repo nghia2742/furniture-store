@@ -5,7 +5,13 @@
     align-items: center;
     background-color: var(--white);
     background-size: 4px 4px;
-    background-image: repeating-linear-gradient(45deg, rgba(233, 178, 122, 0.8) 0, rgba(233, 178, 122, 0.8) 0.4px, #ffffff 0, #ffffff 50%);
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(233, 178, 122, 0.8) 0,
+        rgba(233, 178, 122, 0.8) 0.4px,
+        #ffffff 0,
+        #ffffff 50%
+    );
     position: sticky;
     top: 0;
     left: 0;
@@ -17,7 +23,7 @@
     gap: 20px;
     font-size: 18px;
     font-weight: 400;
-    
+
     li {
         padding: 5px;
         border-radius: 8px;
@@ -26,15 +32,36 @@
 
     li:hover {
         background-color: var(--navy);
-        a {
-            color: var(--white);
-        }
+        color: var(--white);
     }
 
     $phone: 767px;
-    @media (max-width: $phone) { 
+    @media (max-width: $phone) {
         display: none;
     }
+}
+
+.menu {
+    $phone: 767px;
+    @media (max-width: $phone) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: block;
+        padding: 40px 20px;
+        z-index: 12;
+        width: 50%;
+        height: 100vh;
+        text-align: center;
+        background-color: var(--white);
+    }
+}
+
+.closeMenu {
+    font-size: 30px;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
 }
 
 .logo {
@@ -47,9 +74,10 @@
 
 .btn-hamburger {
     display: none;
+    cursor: pointer;
 
     $phone: 767px;
-    @media (max-width: $phone) { 
+    @media (max-width: $phone) {
         display: block;
     }
 }
@@ -60,7 +88,7 @@
     align-items: center;
 
     $phone: 767px;
-    @media (max-width: $phone) { 
+    @media (max-width: $phone) {
         display: none;
     }
 }
