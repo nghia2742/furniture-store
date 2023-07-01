@@ -55,19 +55,19 @@ function Nav({ reloadSidebar, onRemoveFav, onReloadCartSidebar }) {
             </div>
             <ul className={cx('navbar', menu?'menu':'')}>
                 {menu?<span className={cx('closeMenu')} onClick={handleMenu}>&times;</span>:''}
-                <a href="/">
+                <a href="/furniture-store/">
                     <li>Home</li>
                 </a>
-                <a href="/shop">
+                <a href="/furniture-store/shop">
                     <li>Shop</li>
                 </a>
-                <a href="/location">
+                <a href="/furniture-store/location">
                     <li>Location</li>
                 </a>
-                <a href="/services">
+                <a href="/furniture-store/services">
                     <li>Services</li>
                 </a>
-                <a href="/about">
+                <a href="/furniture-store/about">
                     <li>About</li>
                 </a>
             </ul>
