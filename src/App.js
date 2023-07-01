@@ -1,9 +1,9 @@
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { publicRoutes } from './routes';
 
 function App() {
     return (
-        <Router>
+        <Router basename='/furniture-store'>
             <div className="App">
                 <Routes>
                     {publicRoutes.map((route, index) => {
