@@ -11,10 +11,10 @@ import SidebarCart from '../SidebarCart';
 const cx = classNames.bind(styles);
 
 function Nav({ reloadSidebar, onRemoveFav, onReloadCartSidebar }) {
-    let favoriteNumber = JSON.parse(
+    let favoriteNumber = localStorage.getItem('favoriteList')?JSON.parse(
         localStorage.getItem('favoriteList')
-    ).length;
-    let cartNumber = JSON.parse(localStorage.getItem('cartList')).length;
+    ).length : 0;
+    let cartNumber = localStorage.getItem('cartList')?JSON.parse(localStorage.getItem('cartList')).length : 0;
     const [favoriteSidebar, setFavoriteSidebar] = useState(false);
     const handleFavoriteSidebar = () => {
         setFavoriteSidebar(!favoriteSidebar);

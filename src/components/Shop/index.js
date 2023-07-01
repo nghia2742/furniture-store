@@ -81,7 +81,7 @@ function Shop() {
 
     localStorage.setItem('favoriteList', JSON.stringify(favoriteList));
 
-    const [reloadSidebar, setReloadSidebar] = useState(favoriteList.length);
+    const [reloadSidebar, setReloadSidebar] = useState(favoriteList.length||0);
 
     const handleReloadSidebar = () => {
         setReloadSidebar(favoriteList.length + 1);
