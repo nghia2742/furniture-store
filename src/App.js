@@ -5,6 +5,7 @@ function App() {
     return (
         <Router>
             <div className="App">
+                <h1> ERROR PATH</h1>
                 <Routes>
                     {publicRoutes.map((route, index) => {
                         const Page = route.component;
