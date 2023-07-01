@@ -5,7 +5,7 @@ import Services from '../components/Services';
 import About from '../components/About';
 
 const publicRoutes = [
-    { path: '/', component: Home },
+    { path: '/', component: Home , exact: true},
     { path: '/shop', component: Shop },
     { path: '/location', component: Location },
     { path: '/services', component: Services },

@@ -1,23 +1,25 @@
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Switch } from 'react-router';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { publicRoutes } from './routes';
 
 function App() {
     return (
-        <Router basename='/furniture-store'>
+        <Router basename="/furniture-store">
             <div className="App">
-                <Switch>
+                <Routes>
                     {publicRoutes.map((route, index) => {
                         const Page = route.component;
                         return (
                             <Route key={index}
+                                exact={route.exact}
                                 path={route.path}
-                                element={<Page />}
+                                element={
+                                  <Page/> 
+                                }
                             />
                         );
                     })}
-                </Switch>
+                </Routes>
+
             </div>
         </Router>
     );
