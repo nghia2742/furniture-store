@@ -3,7 +3,7 @@ import { publicRoutes } from './routes';
 
 function App() {
     return (
-        <Router>
+        <Router basename='/furniture-store'>
             <div className="App">
                 <Routes>
                     {publicRoutes.map((route, index) => {
