@@ -7,6 +7,7 @@ import styles from './Nav.module.scss';
 import { useState, useEffect } from 'react';
 import SidebarFavorite from '../SidebarFavorite';
 import SidebarCart from '../SidebarCart';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -55,21 +56,21 @@ function Nav({ reloadSidebar, onRemoveFav, onReloadCartSidebar }) {
             </div>
             <ul className={cx('navbar', menu?'menu':'')}>
                 {menu?<span className={cx('closeMenu')} onClick={handleMenu}>&times;</span>:''}
-                <a href="/">
+                <Link href="/">
                     <li>Home</li>
-                </a>
-                <a href="/shop">
+                </Link>
+                <Link href="/shop">
                     <li>Shop</li>
-                </a>
-                <a href="/location">
+                </Link>
+                <Link href="/location">
                     <li>Location</li>
-                </a>
-                <a href="/services">
+                </Link>
+                <Link href="/services">
                     <li>Services</li>
-                </a>
-                <a href="/about">
+                </Link>
+                <Link href="/about">
                     <li>About</li>
-                </a>
+                </Link>
             </ul>
             <div className={cx('interact')}>
                 <div
