@@ -8,7 +8,7 @@ function NotFoundPage() {
         <GlobalStyles>
             <Nav />
             <section class="page_404" style={{
-              width: '100vw', height: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center'
+              paddingTop: '10vh',width: '100vw', height: 'fit-content', minHeight: '90vh', display: 'flex', alignItems: 'center', justifyContent: 'center'
             }}>
                 <div class="container">
                     <div class="row">

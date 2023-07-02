@@ -8,22 +8,22 @@ const data = [
     {
         name: 'Jacob Beattie',
         major: 'Interior Design',
-        src: process.env.PUBLIC_URL + '/images/people/avt1.avif',
+        src: 'images/people/avt1.png',
     },
     {
         name: 'Steeve Dionne',
         major: 'Architecture',
-        src: process.env.PUBLIC_URL + '/images/people/avt2.avif',
+        src: 'images/people/avt2.png',
     },
     {
         name: 'Christina Spence',
         major: 'Graphic Design',
-        src: process.env.PUBLIC_URL + '/images/people/avt3.avif',
+        src: 'images/people/avt3.png',
     },
     {
         name: 'Daryl Hanson',
         major: 'Industrial Design',
-        src: process.env.PUBLIC_URL + '/images/people/avt4.avif',
+        src: 'images/people/avt4.png',
     },
 ];
 
