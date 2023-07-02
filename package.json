@@ -2,7 +2,7 @@
   "homepage":"https://nghia2742.github.io/furniture-store",
   "name": "first-react",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
