@@ -1,6 +1,6 @@
 'use server';
 
-import { BASE_URL_SERVER } from './constant';
+import { BASE_URL_SERVER } from '../constant';
 
 export async function login(payload: { email: string; password: string }) {
     const res = await fetch(BASE_URL_SERVER + '/auth/login', {

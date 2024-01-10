@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setToast } from '@/lib/features/appSlice';
 import { AppState } from '@/lib/store';
 import MyToast from '@/components/MyToast';
-import { BASE_URL } from '@/app/constant';
+import { BASE_URL } from '@/constant';
 
 const Login: React.FC = () => {
     const router = useRouter();

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useSession, signOut } from 'next-auth/react';
 import Avatar from '@/assets/images/defaultedAvatar.jpg';
-import { BASE_URL } from '@/app/constant';
+import { BASE_URL } from '@/constant';
 
 const UserAction = () => {
     const { data: session, status } = useSession();
