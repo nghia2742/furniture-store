@@ -15,7 +15,7 @@ export default function Home() {
         Aos.init({ duration: 1500, once: true });
     }, []);
     return (
-        <div className="scroll-smooth max-w-screen overflow-hidden">
+        <div className="scroll-smooth">
             <Navbar />
             <Hero />
             <CTA />

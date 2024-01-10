@@ -42,9 +42,9 @@ const Navbar = () => {
         <div className={`${stickNav} navbar bg-base-100 border-b`}>
             <Drawer />
             <div className="flex-1">
-                <a className="py-2 px-4 text-2xl justify-center" href='/'>
+                <Link className="py-2 px-4 text-2xl justify-center" href='/'>
                     Furniture
-                </a>
+                </Link>
             </div>
             <div className="flex-none">
                 <div className="hidden md:flex">
