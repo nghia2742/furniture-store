@@ -4,6 +4,7 @@ import './globals.css';
 import { ProviderLayout } from '@/lib/Provider';
 import { getServerSession } from 'next-auth';
 import SessionProvider from '@/components/SessionProvider';
+import { Analytics } from '@vercel/analytics/react';
 
 const ss4 = Source_Serif_4({ subsets: ['latin'] });
 
@@ -14,7 +15,6 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
     children,
-    
 }: {
     children: React.ReactNode;
 }) {
@@ -23,7 +23,10 @@ export default async function RootLayout({
         <html lang="en">
             <body className={ss4.className} data-theme="light">
                 <SessionProvider session={session}>
-                    <ProviderLayout>{children}</ProviderLayout>
+                    <ProviderLayout>
+                        {children}
+                        <Analytics />
+                    </ProviderLayout>
                 </SessionProvider>
             </body>
         </html>
