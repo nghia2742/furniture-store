@@ -5,6 +5,7 @@ import { ProviderLayout } from '@/lib/Provider';
 import { getServerSession } from 'next-auth';
 import SessionProvider from '@/components/SessionProvider';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const ss4 = Source_Serif_4({ subsets: ['latin'] });
 
@@ -26,6 +27,7 @@ export default async function RootLayout({
                     <ProviderLayout>
                         {children}
                         <Analytics />
+                        <SpeedInsights />
                     </ProviderLayout>
                 </SessionProvider>
             </body>
