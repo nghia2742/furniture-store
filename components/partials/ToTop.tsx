@@ -26,7 +26,7 @@ function ToTop() {
         <>
             {isVisible && (
                 <div
-                    className="fixed bottom-0 right-0 z-50 mb-5 mr-1 rounded-full p-2 aspect-square btn btn-outline btn-info cursor-pointer"
+                    className="fixed bottom-0 right-0 z-50 m-5 rounded-full p-2 aspect-square btn btn-outline btn-info cursor-pointer"
                     onClick={scrollToTop}
                 >
                     <svg

@@ -17,16 +17,30 @@ function Drawer() {
         setCartLength(cartLen);
     }, [wishlist, cart]);
 
+    const handleChangeDrawer = (e: any) => {
+        const isChecked = e.target.checked;
+        if (isChecked) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    };
+    
     return (
         <div className="drawer md:hidden w-fit z-50">
-            <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+            <input
+                id="my-drawer"
+                type="checkbox"
+                className="drawer-toggle"
+                onChange={handleChangeDrawer}
+            />
             <div className="drawer-content">
                 {/* Page content here */}
                 <label
                     htmlFor="my-drawer"
                     className="btn btn-ghost drawer-button"
                 >
-                    <HamburgerIcon/>
+                    <HamburgerIcon />
                 </label>
             </div>
             <div className="drawer-side">
@@ -35,7 +49,7 @@ function Drawer() {
                     aria-label="close sidebar"
                     className="drawer-overlay"
                 ></label>
-                <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                <ul className="menu p-4 w-80 h-screen bg-base-200 text-base-content">
                     {/* Sidebar content here */}
                     <li>
                         <Link className="font-bold" href="/">

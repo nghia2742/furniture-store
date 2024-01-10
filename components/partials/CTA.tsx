@@ -6,7 +6,7 @@ import ChairImage2 from '@/assets/images/chair2.png';
 function CTA() {
     return (
         <section
-            className="py-48 bg-gradient-to-r from-blue-100 to-pink-200"
+            className="py-32 bg-gradient-to-r from-blue-100 to-pink-200"
             style={{ clipPath: 'polygon(0 5%, 100% 0%, 100% 100%, 0% 95%)' }}
         >
             <div
@@ -17,7 +17,7 @@ function CTA() {
                     Let&apos;s explore more...
                 </span>
             </div>
-            <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-16">
+            <div className="gap-8 items-center px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 lg:px-16">
                 <div className="bg-stripes-sky py-20 my-8">
                     <Image
                         data-aos="zoom-in"
@@ -43,7 +43,7 @@ function CTA() {
                 </div>
             </div>
 
-            <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-16">
+            <div className="gap-8 items-center pt-16 md:pt-0 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 lg:px-16">
                 <div className="order-last bg-stripes-pink py-16 my-8">
                     <Image
                         data-aos="zoom-in"
