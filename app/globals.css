@@ -2,26 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(54, 60, 141, 0.37);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.bg-stripes-sea {
+    background-color: #ffffff;
+    opacity: 1;
+    background-size: 9px 9px;
+    background-image: repeating-linear-gradient(
+        45deg,
+        #b3e4ff 0,
+        #b3e4ff 0.9px,
+        #ffffff 0,
+        #ffffff 50%
+    );
 }
+
+.bg-stripes-sky {
+    background-color: #38bdf81a;
+    background-image: linear-gradient(
+        135deg,
+        #0ea5e980 10%,
+        #0000 0,
+        #0000 50%,
+        #0ea5e980 0,
+        #0ea5e980 60%,
+        #0000 0,
+        #0000
+    );
+    background-size: 7.07px 7.07px;
+    border-radius: 36% 64% 70% 30% / 56% 48% 52% 44%;
+}
+
+.bg-stripes-pink {
+    background-color: #38bdf81a;
+    background-image: linear-gradient(
+        135deg,
+        #d946ef80 10%,
+        #0000 0,
+        #0000 50%,
+        #d946ef80 0,
+        #d946ef80 60%,
+        #0000 0,
+        #0000
+    );
+    background-size: 7.07px 7.07px;
+    border-radius: 55% 45% 67% 33% / 61% 57% 43% 39%;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+}
+
+/* {
+"beige": "F5F5DC",
+"tan": "D2B48C",
+"darkSeaGreen": "8FBC8F",
+}, */
