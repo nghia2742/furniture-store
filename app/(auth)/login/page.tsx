@@ -8,11 +8,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setToast } from '@/lib/features/appSlice';
 import { AppState } from '@/lib/store';
 import MyToast from '@/components/MyToast';
+import { BASE_URL } from '@/app/constant';
 
 const Login: React.FC = () => {
     const router = useRouter();
     const params = useSearchParams();
-    const callbackUrl = params.get('callbackUrl')?params.get('callbackUrl'):'http://localhost:3000/';
+    const callbackUrl = params.get('callbackUrl')?params.get('callbackUrl'):BASE_URL;
     const [isLoadingSubmit, setLoadingSubmit] = useState(false);
     const [isShowPassword, setShowPassword] = useState(false);
     const isToast = useSelector((state: AppState) => state.app.toast);

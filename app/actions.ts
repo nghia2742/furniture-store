@@ -1,7 +1,9 @@
 'use server';
 
-export async function login(payload: { email: string, password: string }) {
-    const res = await fetch('http://localhost:5000/auth/login', {
+import { BASE_URL_SERVER } from './constant';
+
+export async function login(payload: { email: string; password: string }) {
+    const res = await fetch(BASE_URL_SERVER + '/auth/login', {
         method: 'POST',
         headers: {
             'Content-Type': ' application/json',
@@ -11,16 +13,19 @@ export async function login(payload: { email: string, password: string }) {
 
     if (!res.ok) {
         const errorData = await res.json();
-         throw new Error(errorData.message);
-         
+        throw new Error(errorData.message);
     }
 
     const user = await res.json();
     return user;
 }
 
-export async function register(payload: { name: string, email: string, password: string }) {
-    const res = await fetch('http://localhost:5000/auth/register', {
+export async function register(payload: {
+    name: string;
+    email: string;
+    password: string;
+}) {
+    const res = await fetch(BASE_URL_SERVER + '/auth/register', {
         method: 'POST',
         headers: {
             'Content-Type': ' application/json',
@@ -30,11 +35,11 @@ export async function register(payload: { name: string, email: string, password:
 
     const data = await res.json();
 
-    return {status: res.status, message: data.message};;
+    return { status: res.status, message: data.message };
 }
 
 export async function getProductDetail(slug: string) {
-    const res = await fetch(`http://localhost:5000/products/${slug}`, {
+    const res = await fetch(BASE_URL_SERVER + `/products/${slug}`, {
         next: { revalidate: 20 },
     });
     const product = res.json();
@@ -42,7 +47,7 @@ export async function getProductDetail(slug: string) {
 }
 
 export async function getProductByFilter(queryString: string) {
-    const res = await fetch(`http://localhost:5000/products?${queryString}`, {
+    const res = await fetch(BASE_URL_SERVER + `/products?${queryString}`, {
         next: { revalidate: 20 },
     });
     const products = res.json();
@@ -51,7 +56,7 @@ export async function getProductByFilter(queryString: string) {
 }
 
 export async function getProductByIds(productIds: string[]) {
-    const res = await fetch(`http://localhost:5000/products`, {
+    const res = await fetch(BASE_URL_SERVER + `/products`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useSession, signOut } from 'next-auth/react';
 import Avatar from '@/assets/images/defaultedAvatar.jpg';
+import { BASE_URL } from '@/app/constant';
 
 const UserAction = () => {
     const { data: session, status } = useSession();
@@ -36,7 +37,7 @@ const UserAction = () => {
                             <button
                                 onClick={() =>
                                     signOut({
-                                        callbackUrl: 'http://localhost:3000/',
+                                        callbackUrl: BASE_URL,
                                     })
                                 }
                             >
