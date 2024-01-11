@@ -43,7 +43,7 @@ const Navbar = () => {
             <Drawer />
             <div className="flex-1">
                 <Link className="py-2 px-4 text-2xl justify-center" href='/'>
-                    Furniture
+                    Furniano
                 </Link>
             </div>
             <div className="flex-none">

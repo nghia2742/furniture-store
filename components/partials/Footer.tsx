@@ -7,7 +7,7 @@ const Footer = () => {
                 <div className="md:flex md:justify-between pt-8">
                     <div className="mb-6 md:mb-0">
                         <h2 className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                            Furniture
+                            Furniano
                         </h2>
                     </div>
                     <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
@@ -21,7 +21,7 @@ const Footer = () => {
                                         href="/"
                                         className="hover:underline"
                                     >
-                                        Furniture
+                                        Furniano
                                     </a>
                                 </li>
                                 <li>
@@ -84,7 +84,7 @@ const Footer = () => {
                             href="/"
                             className="hover:underline"
                         >
-                            Furniture™
+                            Furniano™
                         </a>
                         . All Rights Reserved.
                     </span>
