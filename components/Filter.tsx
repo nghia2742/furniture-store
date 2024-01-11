@@ -32,8 +32,8 @@ function Filter() {
     }
     
     return (
-        <div className="p-5 flex justify-between">
-            <div className="w-1/2 min-w-64 md:w-1/4 flex items-center">
+        <div className="p-5 block sm:flex justify-between">
+            <div className="min-w-64 md:w-1/4 flex justify-between md:justify-start md:items-center">
                 <div className="flex items-center gap-2">
                     <label htmlFor="simple-search" className="sr-only">
                         Search
@@ -56,10 +56,12 @@ function Filter() {
                     <Link href={"/shop"} className="btn btn-sm btn-error text-white">Clear</Link>
                 </div>
             </div>
-            <div className='flex gap-2'>
-                {/* <button className="flex items-center justify-center w-full gap-1 px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg md:w-auto focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
-                    <FilterIcon />
-                </button> */}
+            <div className='flex gap-2 justify-end mt-4'>
+                <div >
+                    <button className="flex items-center justify-center h-full w-full gap-1 px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg md:w-auto focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
+                        <FilterIcon />
+                    </button>
+                </div>
                 <div className="dropdown dropdown-end">
                     <button
                         className="flex items-center justify-center w-full gap-1 px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg md:w-auto focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200"

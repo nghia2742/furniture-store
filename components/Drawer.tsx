@@ -49,7 +49,7 @@ function Drawer() {
                     aria-label="close sidebar"
                     className="drawer-overlay"
                 ></label>
-                <ul className="menu p-4 w-80 h-screen bg-base-200 text-base-content">
+                <ul className="menu p-4 w-80 h-screen bg-base-200 text-base-content overflow-hidden">
                     {/* Sidebar content here */}
                     <li>
                         <Link className="font-bold" href="/">

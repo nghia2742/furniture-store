@@ -98,7 +98,7 @@ const Login: React.FC = () => {
 
     return (
         <section className=" h-fit min-h-screen bg-gradient-to-r from-blue-300 to-pink-300">
-            <div className="flex p-5 flex-col items-center justify-center mx-auto md:h-screen lg:py-0">
+            <div className="flex p-5 flex-col items-center justify-center mx-auto h-screen lg:py-0">
                 <div className="w-full rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0 glass">
                     <Link
                         href={'/'}
