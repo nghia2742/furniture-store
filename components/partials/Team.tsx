@@ -3,7 +3,7 @@ import React from 'react';
 
 const Team = () => {
     return (
-        <section id='team' className="py-24 bg-gradient-to-r from-blue-100 to-pink-200" style={{ clipPath: "polygon(0 0, 100% 5%, 100% 95%, 0% 100%)" }}>
+        <section id='team' className="py-24 bg-gradient-to-r from-blue-100 to-pink-200 overflow-hidden" style={{ clipPath: "polygon(0 0, 100% 5%, 100% 95%, 0% 100%)" }}>
             <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-10 lg:px-6">
                 <div className="mx-auto mb-8 max-w-screen-sm lg:mb-16">
                     <div className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-center lg:my-12 pb-5" data-aos="zoom-in">

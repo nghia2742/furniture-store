@@ -6,7 +6,7 @@ import ChairImage2 from '@/assets/images/chair2.png';
 function CTA() {
     return (
         <section
-            className="py-32 bg-gradient-to-r from-blue-100 to-pink-200"
+            className="py-32 bg-gradient-to-r from-blue-100 to-pink-200 overflow-hidden"
             style={{ clipPath: 'polygon(0 5%, 100% 0%, 100% 100%, 0% 95%)' }}
         >
             <div

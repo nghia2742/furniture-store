@@ -2,7 +2,7 @@ import React from 'react';
 
 const Features = () => {
     return (
-        <section id='features' className="bg-white dark:bg-gray-900 mt-10  overflow-hidden">
+        <section id='features' className="bg-white dark:bg-gray-900 mt-10 overflow-hidden">
             <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:pt-8 lg:px-16">
                 <div className="max-w-screen mb-8 lg:mb-16">
                     <div className="font-extrabold text-center lg:my-12" data-aos="zoom-in">

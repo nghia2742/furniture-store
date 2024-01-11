@@ -4,7 +4,7 @@ import HeroImage from '@/assets/images/furnitureHero.png';
 
 export default function Hero() {
     return (
-        <section className="h-fit min-h-screen w-full py-12 lg:py-5">
+        <section className="h-fit min-h-screen w-full py-12 lg:py-5 overflow-hidden">
             <div className="px-4 md:px-10">
                 <div className="lg:flex gap-6 lg:gap-12 justify-center">
                     <Image

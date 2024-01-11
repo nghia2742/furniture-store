@@ -19,13 +19,16 @@ function Drawer() {
 
     const handleChangeDrawer = (e: any) => {
         const isChecked = e.target.checked;
+
         if (isChecked) {
             document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
         }
     };
-    
+
+    const enableScroll = () => {
+        document.body.style.overflow = '';
+    }
+
     return (
         <div className="drawer md:hidden w-fit z-50">
             <input
@@ -52,27 +55,27 @@ function Drawer() {
                 <ul className="menu p-4 w-80 h-screen bg-base-200 text-base-content overflow-hidden">
                     {/* Sidebar content here */}
                     <li>
-                        <Link className="font-bold" href="/">
+                        <Link onClick={enableScroll} className="font-bold" href="/">
                             Home
                         </Link>
                     </li>
                     <li>
-                        <Link className="font-bold" href="/shop">
+                        <Link onClick={enableScroll} className="font-bold" href="/shop">
                             Shop
                         </Link>
                     </li>
                     <li>
-                        <Link className="font-bold" href="/#features">
+                        <Link onClick={enableScroll} className="font-bold" href="/#features">
                             Features
                         </Link>
                     </li>
                     <li>
-                        <Link className="font-bold" href="/#team">
+                        <Link onClick={enableScroll} className="font-bold" href="/#team">
                             Team
                         </Link>
                     </li>
                     <li>
-                        <Link className="font-bold" href="/wishlist">
+                        <Link onClick={enableScroll} className="font-bold" href="/wishlist">
                             Wishlist
                             {wishlistLength !== 0 && (
                                 <span className="badge badge-error badge-sm indicator-item text-white">
@@ -82,7 +85,7 @@ function Drawer() {
                         </Link>
                     </li>
                     <li>
-                        <Link className="font-bold" href="/cart">
+                        <Link onClick={enableScroll} className="font-bold" href="/cart">
                             Cart
                             {cartLength !== 0 && (
                                 <span className="badge badge-error badge-sm indicator-item text-white">
