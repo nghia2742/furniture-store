@@ -2,7 +2,7 @@
 
 import { BASE_URL_SERVER } from '../constant';
 
-export async function login(payload: { email: string; password: string }) {
+export async function login(payload: { email: string, password: string }) {
     const res = await fetch(BASE_URL_SERVER + '/auth/login', {
         method: 'POST',
         headers: {
@@ -18,6 +18,20 @@ export async function login(payload: { email: string; password: string }) {
 
     const user = await res.json();
     return user;
+}
+
+export async function saveGoogleAccount(email: string , name: string) {
+    const res = await fetch(BASE_URL_SERVER + '/auth/user', {
+        method: 'POST',
+        headers: {
+            'Content-Type': ' application/json',
+        },
+        body: JSON.stringify({email, name}),
+    });
+
+    const data = await res.json();
+
+    return { status: res.status, message: data.message };
 }
 
 export async function register(payload: {

@@ -3,11 +3,24 @@ import Link from 'next/link';
 import { useSession, signOut } from 'next-auth/react';
 import Avatar from '@/assets/images/defaultedAvatar.jpg';
 import { BASE_URL } from '@/constant';
+import { useEffect } from 'react';
+import { saveGoogleAccount } from '@/app/actions';
 
 const UserAction = () => {
     const { data: session, status } = useSession();
     const isAuthenticated = status === 'authenticated';
     const avt = session?.user?.image || Avatar;
+
+    useEffect(() => {
+        async function fetchData() {
+            const email =session?.user?.email || '';
+            const name =session?.user?.name || '';
+            await saveGoogleAccount(email, name);
+        }
+        if (isAuthenticated) {
+            fetchData();
+        }
+    }, [isAuthenticated, session]);
 
     if (isAuthenticated) {
         return (
