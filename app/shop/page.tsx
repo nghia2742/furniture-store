@@ -12,6 +12,7 @@ import MyToast from '@/components/MyToast';
 import ToTop from '@/components/partials/ToTop';
 import { AppState } from '@/lib/store';
 import ShopSkeleton from '@/components/loading/ShopSkeleton';
+import Link from 'next/link';
 
 function Shop() {
     const searchParams = useSearchParams();
@@ -66,7 +67,7 @@ function Shop() {
             .map((e) => `${e.key}=${e.value}`)
             .join('&');
         pagination.push(
-            <a
+            <Link
                 key={i}
                 href={`/shop?${queryString}`}
                 className={`${Number(page) === i ? 'pointer-events-none' : ''}`}
@@ -78,7 +79,7 @@ function Shop() {
                 >
                     {i}
                 </button>
-            </a>
+            </Link>
         );
     }
 
@@ -97,7 +98,7 @@ function Shop() {
                     <Filter />
 
                     {/* Wrap items */}
-                    <div className="pb-16 flex justify-center flex-wrap lg:justify-evenly gap-10">
+                    <div className="pb-16 flex justify-center flex-wrap lg:justify-evenly gap-16">
                         {lengthProducts !== 0 ? (
                             products.map(
                                 (product: ProductProp, index: number) => {

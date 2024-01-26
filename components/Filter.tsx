@@ -74,16 +74,16 @@ function Filter() {
                     </button>
                     <ul className="mt-2 p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
                         <li>
-                            <a href={`/shop?${queryString}&sort=id&order=-1`}>Newest</a>
+                            <Link href={`/shop?${queryString}&sort=id&order=-1`}>Newest</Link>
                         </li>
                         <li>
-                            <a href={`/shop?${queryString}&sort=id`}>Oldest</a>
+                            <Link href={`/shop?${queryString}&sort=id`}>Oldest</Link>
                         </li>
                         <li>
-                            <a href={`/shop?${queryString}&sort=price`}>Lowest prices</a>
+                            <Link href={`/shop?${queryString}&sort=price`}>Lowest prices</Link>
                         </li>
                         <li>
-                            <a href={`/shop?${queryString}&sort=price&order=-1`}>Highest prices</a>
+                            <Link href={`/shop?${queryString}&sort=price&order=-1`}>Highest prices</Link>
                         </li>
                     </ul>
                 </div>
