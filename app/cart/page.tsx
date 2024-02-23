@@ -158,17 +158,19 @@ const Cart = () => {
                     </table>
                 )}
             </div>
-            <div className="flex items-center justify-end p-10 gap-4">
-                <h2 className="text-2xl">Total price: </h2>
-                <span className="text-3xl font-bold text-red-500">${handleTotalPrice()}</span>
-                <Link
-                    href={'/checkout'}
-                    className="btn px-16 bg-orange-500 text-white text-xl"
-                    disabled={products.length === 0?true:false}
-                >
-                    Checkout
-                </Link>
-            </div>
+            {products.length !== 0 &&
+                <div className="flex items-center justify-end p-10 gap-4">
+                    <h2 className="text-2xl">Total price: </h2>
+                    <span className="text-3xl font-bold text-red-500">${handleTotalPrice()}</span>
+                    <Link
+                        href={'/checkout'}
+                        className="btn px-16 bg-orange-500 text-white text-xl"
+                         
+                    >
+                        Checkout
+                    </Link>
+                </div>
+            }
             <ToTop />
             {/* TOAST SECTION */}
             {isToast.status && <MyToast />}
