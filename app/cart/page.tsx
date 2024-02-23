@@ -164,6 +164,7 @@ const Cart = () => {
                 <Link
                     href={'/checkout'}
                     className="btn px-16 bg-orange-500 text-white text-xl"
+                    disable={products.length === 0?true:false}
                 >
                     Checkout
                 </Link>
