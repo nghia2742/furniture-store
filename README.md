@@ -1,4 +1,4 @@
-# Furniture Web Project
+# Furniture Web Project (UI) (Repo backend [here](https://github.com/nghia2742/api-furniture).)
 
 This furniture web project is organized on both backend and frontend. Backend code follows the MVC model, connecting to MongoDB, while the frontend utilizes UI libraries like Tailwind and DaisyUI for efficiency. 
 
