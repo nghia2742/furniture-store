@@ -25,14 +25,14 @@ const Checkout = () => {
         }
     };
 
-    useEffect(() => {
-        async function fetchData() {
-            const prodIds = cart.map((product) => product.id);
-            const response = await getProductByIds(prodIds);
-            setProducts(response);
-        }
-        fetchData();
-    }, [cart]);
+    // useEffect(() => {
+    //     async function fetchData() {
+    //         const prodIds = cart.map((product) => product.id);
+    //         const response = await getProductByIds(prodIds);
+    //         setProducts(response);
+    //     }
+    //     fetchData();
+    // }, [cart]);
 
     const getQuantityById = (id: string) => {
         let product = cart.find((e) => e.id === id);
@@ -43,7 +43,7 @@ const Checkout = () => {
 
     const handleTotalPrice: any = () => {
         const subtotals = cart.map((prod: { id: string; quantity: number }) => {
-            const product = products.find((e) => prod.id === e._id);
+            const product = products.find((e) => prod.id === e.id);
             const quantity = getQuantityById(prod.id);
             const price = product?.price || 0; // Use 0 as default price if not found
             const subtotal = quantity * price;
@@ -133,11 +133,11 @@ const Checkout = () => {
                                             <input
                                                 className="max-w-12 text-center bg-transparent"
                                                 disabled
-                                                id={product._id}
+                                                id={product.id}
                                                 type="number"
                                                 name="quantity"
                                                 defaultValue={getQuantityById(
-                                                    product._id
+                                                    product.id
                                                 )}
                                                 min={1}
                                                 readOnly
@@ -146,7 +146,7 @@ const Checkout = () => {
                                         <td>{product.price}</td>
                                         <td>
                                             {(
-                                                getQuantityById(product._id) *
+                                                getQuantityById(product.id) *
                                                 product.price
                                             ).toFixed(2)}
                                         </td>
