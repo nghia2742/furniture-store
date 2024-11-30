@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setToast } from '@/lib/features/appSlice';
 import { AppState } from '@/lib/store';
 import MyToast from '@/components/MyToast';
-import { BASE_URL } from '@/constant';
+import { BASE_URL, WARNING_MSG } from '@/constant';
 
 const Login: React.FC = () => {
     const router = useRouter();
@@ -34,50 +34,51 @@ const Login: React.FC = () => {
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        setLoadingSubmit(true);
-        if (formData.password.length < 6) {
-            setLoadingSubmit(false);
-            dispatch(
-                setToast({
-                    status: true,
-                    type: 'error',
-                    message: '❌ Your pass must minium 6 characters',
-                })
-            );
-            setTimeout(() => {
-                dispatch(setToast({ status: false }));
-            }, 2000);
-            return;
-        }
+        return alert(WARNING_MSG)
+        // setLoadingSubmit(true);
+        // if (formData.password.length < 6) {
+        //     setLoadingSubmit(false);
+        //     dispatch(
+        //         setToast({
+        //             status: true,
+        //             type: 'error',
+        //             message: '❌ Your pass must minium 6 characters',
+        //         })
+        //     );
+        //     setTimeout(() => {
+        //         dispatch(setToast({ status: false }));
+        //     }, 2000);
+        //     return;
+        // }
 
-        try {
-            const response = await signIn('credentials', {
-                email: formData.email,
-                password: formData.password,
-                redirect: false,
-                callbackUrl: `${callbackUrl}`,
-            });
+        // try {
+        //     const response = await signIn('credentials', {
+        //         email: formData.email,
+        //         password: formData.password,
+        //         redirect: false,
+        //         callbackUrl: `${callbackUrl}`,
+        //     });
 
-            if (response?.error) {
-                setLoadingSubmit(false);
-                dispatch(
-                    setToast({
-                        status: true,
-                        type: 'error',
-                        message: `❌ ${response.error.replace("Error: ","")}`,
-                    })
-                );
-                setTimeout(() => {
-                    dispatch(setToast({ status: false }));
-                }, 2000);
-                return;
-            }
+        //     if (response?.error) {
+        //         setLoadingSubmit(false);
+        //         dispatch(
+        //             setToast({
+        //                 status: true,
+        //                 type: 'error',
+        //                 message: `❌ ${response.error.replace("Error: ","")}`,
+        //             })
+        //         );
+        //         setTimeout(() => {
+        //             dispatch(setToast({ status: false }));
+        //         }, 2000);
+        //         return;
+        //     }
 
-            router.push(String(callbackUrl));
-        } catch (error) {
-            console.log(error);
-            setLoadingSubmit(false);
-        }
+        //     router.push(String(callbackUrl));
+        // } catch (error) {
+        //     console.log(error);
+        //     setLoadingSubmit(false);
+        // }
     };
 
     const handleLoginGoogle = async () => {

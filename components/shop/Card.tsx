@@ -7,7 +7,7 @@ import { CardProps } from '@/app/types';
 import CartButton from './CartButton';
 
 const Card: React.FC<CardProps> = ({ product }) => {
-    const { _id, name, image, price } = product;
+    const { id, name, image, price } = product;
     return (
         <section className="card w-80 bg-stripes-sea shadow-xl mt-10 hover:scale-105 transition-all duration-300 hover:cursor-pointer ring-purple-400 hover:ring-4">
             <Link href={`/shop/product/${name}`}>
@@ -52,9 +52,9 @@ const Card: React.FC<CardProps> = ({ product }) => {
                     </p>
                     <div className="flex">
                         {/* Favorite */}
-                        <FavButton id={_id} />
+                        <FavButton id={id} />
                         {/* Button cart */}
-                        <CartButton id={_id} />
+                        <CartButton id={id} />
                     </div>
                 </div>
             </div>

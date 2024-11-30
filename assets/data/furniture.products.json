@@ -1,0 +1,256 @@
+[{
+  "_id": {
+    "$oid": "64f8a8db4f9428fa2875b4a5"
+  },
+  "name": "Soft Sofa",
+  "image": "https://i.imgur.com/mHIfdrD.png",
+  "price": 399.99,
+  "category": "sofa",
+  "createdAt": {
+    "$date": "2023-09-06T16:29:15.125Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T16:29:15.125Z"
+  },
+  "__v": 0,
+  "id": 1
+},
+{
+  "_id": {
+    "$oid": "64f8a9b14f9428fa2875b4a7"
+  },
+  "name": "Seater Sofa Set",
+  "image": "https://i.imgur.com/AF8eL0d.png",
+  "price": 499.99,
+  "category": "sofa",
+  "createdAt": {
+    "$date": "2023-09-06T16:32:49.317Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T16:32:49.317Z"
+  },
+  "__v": 0,
+  "id": 2
+},
+{
+  "_id": {
+    "$oid": "64f8a9ef4f9428fa2875b4a9"
+  },
+  "name": "Field Lounge Chair",
+  "image": "https://i.imgur.com/QoD0EXQ.png",
+  "price": 199.99,
+  "category": "chair",
+  "createdAt": {
+    "$date": "2023-09-06T16:33:51.895Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T16:33:51.895Z"
+  },
+  "__v": 0,
+  "id": 3
+},
+{
+  "_id": {
+    "$oid": "64f8aa0e4f9428fa2875b4ab"
+  },
+  "name": "Allegra Chair",
+  "image": "https://i.imgur.com/NhhIGRL.png",
+  "price": 199.99,
+  "category": "chair",
+  "createdAt": {
+    "$date": "2023-09-06T16:34:22.313Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T16:34:22.313Z"
+  },
+  "__v": 0,
+  "id": 4
+},
+{
+  "_id": {
+    "$oid": "64f8aa374f9428fa2875b4ad"
+  },
+  "name": "Houston Dining Chair",
+  "image": "https://i.imgur.com/nWAjqtW.png",
+  "price": 99.99,
+  "category": "chair",
+  "createdAt": {
+    "$date": "2023-09-06T16:35:03.281Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T16:35:03.281Z"
+  },
+  "__v": 0,
+  "id": 5
+},
+{
+  "_id": {
+    "$oid": "64f8aa594f9428fa2875b4af"
+  },
+  "name": "Simple Table",
+  "image": "https://i.imgur.com/SvRGnCK.png",
+  "price": 199.99,
+  "category": "table",
+  "createdAt": {
+    "$date": "2023-09-06T16:35:37.081Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T16:35:37.081Z"
+  },
+  "__v": 0,
+  "id": 6
+},
+{
+  "_id": {
+    "$oid": "64f8aa814f9428fa2875b4b1"
+  },
+  "name": "Silver Bed",
+  "image": "https://i.imgur.com/VS1OILa.png",
+  "price": 599.99,
+  "category": "bed",
+  "createdAt": {
+    "$date": "2023-09-06T16:36:17.347Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T16:36:17.347Z"
+  },
+  "__v": 0,
+  "id": 7
+},
+{
+  "_id": {
+    "$oid": "64f8aaa84f9428fa2875b4b3"
+  },
+  "name": "Wooden bookshelf",
+  "image": "https://i.imgur.com/gJSDO3f.png",
+  "price": 499.99,
+  "category": "bookshelf",
+  "createdAt": {
+    "$date": "2023-09-06T16:36:56.526Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T16:36:56.526Z"
+  },
+  "__v": 0,
+  "id": 8
+},
+{
+  "_id": {
+    "$oid": "65957f37d416951850c260c3"
+  },
+  "name": "Wooden Chair",
+  "image": "https://i.imgur.com/Dp3DEn6.png",
+  "price": 999.99,
+  "id": 9,
+  "category": "chair"
+},
+{
+  "_id": {
+    "$oid": "659e3bc92e8ff3c39055e434"
+  },
+  "name": "Boston Wooden Bar Stool",
+  "image": "https://i.imgur.com/RcwBVXa.png",
+  "price": 110,
+  "id": "10",
+  "category": "chair"
+},
+{
+  "_id": {
+    "$oid": "659e3d952e8ff3c39055e435"
+  },
+  "name": "Paris Bar Stools",
+  "image": "https://i.imgur.com/rBzNWXl.png",
+  "price": 90,
+  "id": "11",
+  "category": "chair"
+},
+{
+  "_id": {
+    "$oid": "659e3e3e2e8ff3c39055e436"
+  },
+  "name": "Arola Complete Table",
+  "image": "https://i.imgur.com/0g6sMCe.png",
+  "price": 492.79,
+  "category": "table",
+  "id": 12
+},
+{
+  "_id": {
+    "$oid": "659e3ec72e8ff3c39055e437"
+  },
+  "name": "Imola Complete Table",
+  "image": "https://i.imgur.com/Mtp9hEG.png",
+  "price": 493.32,
+  "category": "table",
+  "id": 13
+},
+{
+  "_id": {
+    "$oid": "659e42362e8ff3c39055e438"
+  },
+  "name": "Caddo Large Round Dining Table",
+  "image": "https://i.imgur.com/VSebtv2.png",
+  "price": 560,
+  "category": "table",
+  "id": 14
+},
+{
+  "_id": {
+    "$oid": "659e42a02e8ff3c39055e439"
+  },
+  "name": "Carrara Rectangular Dining Table",
+  "image": "https://i.imgur.com/usC2hsE.png",
+  "price": 326.4,
+  "category": "table",
+  "id": 15
+},
+{
+  "_id": {
+    "$oid": "659e4d632e8ff3c39055e43a"
+  },
+  "name": "Lounge Classic Sofa",
+  "image": "https://i.imgur.com/7m1Jthr.png",
+  "price": 2349,
+  "category": "sofa",
+  "id": 16
+},
+{
+  "_id": {
+    "$oid": "659e594a2e8ff3c39055e43b"
+  },
+  "name": "Floating Platform Bed",
+  "image": "https://i.imgur.com/gqxXT5a.png",
+  "price": 1438,
+  "category": "bed",
+  "id": 17
+},
+{
+  "_id": {
+    "$oid": "659e59b22e8ff3c39055e43c"
+  },
+  "name": "Wendell Queen Storage Bed",
+  "image": "https://i.imgur.com/Q3tnMRj.png",
+  "price": 1290,
+  "category": "bed",
+  "id": 18
+},
+{
+  "_id": {
+    "$oid": "659e5a1e2e8ff3c39055e43d"
+  },
+  "name": "San Mateo Panel Bed",
+  "image": "https://i.imgur.com/Q9TtHZr.png",
+  "price": 1019,
+  "category": "bed",
+  "id": 19
+},
+{
+  "_id": {
+    "$oid": "659e5a822e8ff3c39055e43e"
+  },
+  "name": "Oak-colored bookshelf",
+  "image": "https://i.imgur.com/K0c6HuB.png",
+  "price": 179.49,
+  "category": "bookshelf",
+  "id": 20
+}]

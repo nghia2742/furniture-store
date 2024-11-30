@@ -9,6 +9,7 @@ import MyToast from '@/components/MyToast';
 import { AppState } from '@/lib/store';
 import { setToast } from '@/lib/features/appSlice';
 import { signIn } from 'next-auth/react';
+import { WARNING_MSG } from '@/constant';
 
 function SignUp() {
     const { push } = useRouter();
@@ -39,6 +40,7 @@ function SignUp() {
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        return alert(WARNING_MSG)
         setLoadingSubmit(true);
         if (formData.password.length < 6) {
             setLoadingSubmit(false);

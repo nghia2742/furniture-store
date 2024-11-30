@@ -1,12 +1,17 @@
 'use client';
 
-import { DownCaretIcon, FilterIcon, SearchIcon, SortIcon } from '@/assets/svgs';
-import Link from 'next/link';
+import { SearchIcon } from '@/assets/svgs';
 import { useRouter, useSearchParams } from 'next/navigation';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-function Filter() {
-    const [search, setSearch] = useState("")
+function Filter({
+    productLength,
+    isLoading,
+}: {
+    productLength: number;
+    isLoading?: boolean;
+}) {
+    const [search, setSearch] = useState('');
     const searchParams = useSearchParams();
     const router = useRouter();
     var page = '1';
@@ -21,18 +26,21 @@ function Filter() {
         .map((e) => `${e.key}=${e.value}`)
         .join('&');
 
-    const handleOnChangeSearch = (e: any ) => {
+    const handleOnChangeSearch = (e: any) => {
         setSearch(e.target.value);
-    }
+    };
 
     const handleSubmit = (e: any) => {
-        if (e.key === "Enter" && search !== "") {
-            router.push(`/shop?search=${search}`)
+        if (e.key === 'Enter' && search !== '') {
+            router.push(`/shop?search=${search}`);
         }
-    }
-    
+    };
+
     return (
-        <div className="p-5 block sm:flex justify-between">
+        <div className="px-5 block sm:flex justify-between pb-0 pt-10">
+            <div className="p-5 font-semibold">
+                Total products: {productLength}
+            </div>
             <div className="min-w-64 md:w-1/4 flex justify-between md:justify-start md:items-center">
                 <div className="flex items-center gap-2">
                     <label htmlFor="simple-search" className="sr-only">
@@ -45,7 +53,7 @@ function Filter() {
                         <input
                             onChange={handleOnChangeSearch}
                             onKeyDown={handleSubmit}
-                            type="text"
+                            type="search"
                             id="simple-search"
                             className="block w-full p-2 pl-10 text-sm text-gray-900 input input-bordered input-sm max-w-xs focus:outline-blue-400"
                             placeholder="Search"
@@ -53,10 +61,18 @@ function Filter() {
                             required
                         />
                     </div>
-                    <Link href={"/shop"} className="btn btn-sm btn-error text-white">Clear</Link>
+                    <div
+                        className="btn btn-sm btn-error text-white"
+                        onClick={(e) => {
+                            if (isLoading) return e.preventDefault();
+                            router.replace('/shop')
+                        }}
+                    >
+                        Refresh
+                    </div>
                 </div>
             </div>
-            <div className='flex gap-2 justify-end mt-4'>
+            {/* <div className='flex gap-2 justify-end mt-4'>
                 <div >
                     <button className="flex items-center justify-center h-full w-full gap-1 px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg md:w-auto focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
                         <FilterIcon />
@@ -87,7 +103,7 @@ function Filter() {
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }

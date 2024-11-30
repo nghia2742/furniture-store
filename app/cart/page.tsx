@@ -13,69 +13,69 @@ import MyToast from '@/components/MyToast';
 import Link from 'next/link';
 
 const Cart = () => {
-    const dispatch = useDispatch();
-    const cart = useSelector((state: AppState) => state.product.cart);
-    const [products, setProducts] = useState<ProductProp[] | []>([]);
-    const isToast = useSelector((state: AppState) => state.app.toast);
-    const [loading, setLoading] = useState(true);
+    // const dispatch = useDispatch();
+    // const cart = useSelector((state: AppState) => state.product.cart);
+    // const [products, setProducts] = useState<ProductProp[] | []>([]);
+    // const isToast = useSelector((state: AppState) => state.app.toast);
+    // const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        async function fetchData() {
-            const prodIds = cart.map((product) => product.id);
-            const response = await getProductByIds(prodIds);
-            setProducts(response);
-            if (response) {
-                setLoading(false);
-            }
-        }
-        fetchData();
-    }, [cart]);
+    // useEffect(() => {
+    //     async function fetchData() {
+    //         const prodIds = cart.map((product) => product.id);
+    //         const response = await getProductByIds(prodIds);
+    //         setProducts(response);
+    //         if (response) {
+    //             setLoading(false);
+    //         }
+    //     }
+    //     fetchData();
+    // }, [cart]);
 
-    const getQuantityById = (id: string) => {
-        let product = cart.find((e) => e.id === id);
-        if (product === undefined) return 0;
-        if (product.quantity < 1) return 1;
-        return product.quantity;
-    };
+    // const getQuantityById = (id: string) => {
+    //     let product = cart.find((e) => e.id === id);
+    //     if (product === undefined) return 0;
+    //     if (product.quantity < 1) return 1;
+    //     return product.quantity;
+    // };
 
-    if (loading) {
-        return <TableCartSkeleton />;
-    }
+    // if (loading) {
+    //     return <TableCartSkeleton />;
+    // }
 
-    const handleTotalPrice: any = () => {
-        const subtotals = cart.map((prod: { id: string; quantity: number }) => {
-            const product = products.find((e) => prod.id === e._id);
-            const quantity = getQuantityById(prod.id);
-            const price = product?.price || 0; // Use 0 as default price if not found
-            const subtotal = quantity * price;
-            return subtotal;
-        });
+    // const handleTotalPrice: any = () => {
+    //     const subtotals = cart.map((prod: { id: string; quantity: number }) => {
+    //         const product = products.find((e) => prod.id === e._id);
+    //         const quantity = getQuantityById(prod.id);
+    //         const price = product?.price || 0; // Use 0 as default price if not found
+    //         const subtotal = quantity * price;
+    //         return subtotal;
+    //     });
     
-        const totalPrice = subtotals.reduce((acc, currentValue) => acc + currentValue, 0);
-        return totalPrice.toFixed(2);
-    };
+    //     const totalPrice = subtotals.reduce((acc, currentValue) => acc + currentValue, 0);
+    //     return totalPrice.toFixed(2);
+    // };
 
-    const handleRemoveFromCart = (id: string) => {
-        dispatch(removeCart(id));
-        dispatch(
-            setToast({
-                status: true,
-                type: 'success',
-                message: '🎉 Removed from your cart',
-            })
-        );
-        setTimeout(() => {
-            dispatch(setToast({ status: false }));
-        }, 2000);
-        return;
-    };
+    // const handleRemoveFromCart = (id: string) => {
+    //     dispatch(removeCart(id));
+    //     dispatch(
+    //         setToast({
+    //             status: true,
+    //             type: 'success',
+    //             message: '🎉 Removed from your cart',
+    //         })
+    //     );
+    //     setTimeout(() => {
+    //         dispatch(setToast({ status: false }));
+    //     }, 2000);
+    //     return;
+    // };
 
-    const handleChangeQuantity = (e: any) => {
-        const newQuantity =
-            parseInt(e.target.value) > 0 ? parseInt(e.target.value) : 1;
-        const productId = e.target.id;
-        dispatch(setCart({ id: productId, quantity: newQuantity }));
-    };
+    // const handleChangeQuantity = (e: any) => {
+    //     const newQuantity =
+    //         parseInt(e.target.value) > 0 ? parseInt(e.target.value) : 1;
+    //     const productId = e.target.id;
+    //     dispatch(setCart({ id: productId, quantity: newQuantity }));
+    // };
 
     return (
         <section className="p-2 md:p-8 h-fit min-h-screen">
@@ -83,10 +83,10 @@ const Cart = () => {
                 Your cart
             </h1>
             <div className="overflow-x-auto md:px-10 ">
-                {products.length === 0 ? (
+                {true ? (
                     <div className="min-h-[60vh] flex items-center justify-center">
                         <div className="text-xl text-center">
-                            Your cart is empty.
+                        Sorry, this function hasn&#39;t been serviced right now 😥
                         </div>
                     </div>
                 ) : (
@@ -104,7 +104,7 @@ const Cart = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {products.map((product, index) => {
+                            {/* {products.map((product, index) => {
                                 return (
                                     <tr key={index} className="h-20">
                                         <th>{index + 1}</th>
@@ -153,12 +153,12 @@ const Cart = () => {
                                         </td>
                                     </tr>
                                 );
-                            })}
+                            })} */}
                         </tbody>
                     </table>
                 )}
             </div>
-            {products.length !== 0 &&
+            {/* {products.length !== 0 &&
                 <div className="flex items-center justify-end p-10 gap-4">
                     <h2 className="text-2xl">Total price: </h2>
                     <span className="text-3xl font-bold text-red-500">${handleTotalPrice()}</span>
@@ -170,10 +170,10 @@ const Cart = () => {
                         Checkout
                     </Link>
                 </div>
-            }
+            } */}
             <ToTop />
             {/* TOAST SECTION */}
-            {isToast.status && <MyToast />}
+            {/* {isToast.status && <MyToast />} */}
         </section>
     );
 };

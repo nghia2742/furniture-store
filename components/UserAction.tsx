@@ -11,17 +11,6 @@ const UserAction = () => {
     const isAuthenticated = status === 'authenticated';
     const avt = session?.user?.image || Avatar;
 
-    useEffect(() => {
-        async function fetchData() {
-            const email =session?.user?.email || '';
-            const name =session?.user?.name || '';
-            await saveGoogleAccount(email, name);
-        }
-        if (isAuthenticated) {
-            fetchData();
-        }
-    }, [isAuthenticated, session]);
-
     if (isAuthenticated) {
         return (
             <>
